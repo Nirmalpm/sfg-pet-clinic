@@ -8,7 +8,6 @@
   <groupId>guru.springframework</groupId>
   <artifactId>pet-clinic-web</artifactId>
   <version>0.0.3-SNAPSHOT</version>
-  <packaging>war</packaging>
   <name>pet-clinic-web</name>
   <description>Pet Clinic Web Project</description>
   <dependencies>
