@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.com">
+<html lang="en" xmlns:th="http://www.thymeleaf.com" th:replace="~{fragments/layout :: layout (~{::body},'home')}">
 <head>
 <meta charset="ISO-8859-1">
 <title>Index</title>
 </head>
 <body>
 <h1>Index</h1>
-<p th:text="Index"></p>
+<p th:text="#{welcome}">Welcome</p>
+    <div class="row">
+        <div class="col-md-12">
+          <img class="img-responsive" src="../static/resources/images/pets.png" th:src="@{/resources/images/pets.png}"/>
+        </div>
+    </div>
 </body>
 </html>
