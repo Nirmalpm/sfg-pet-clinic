@@ -62,12 +62,27 @@
       <version>${webjars-bootstrap.version}</version>
     </dependency>
     <!-- end of webjars -->
-	<!--  
-    <dependency>
+	<dependency>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-test</artifactId>
 		<scope>test</scope>
-	</dependency>-->
+		<exclusions>
+			<exclusion>
+				<artifactId>junit</artifactId>
+				<groupId>junit</groupId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+	<dependency>
+		<artifactId>junit-jupiter-api</artifactId>
+		<groupId>org.junit.jupiter</groupId>
+		<scope>test</scope>
+	</dependency>
+	<dependency>
+		<artifactId>junit-jupiter-engine</artifactId>
+		<groupId>org.junit.jupiter</groupId>
+		<scope>test</scope>
+	</dependency>
   </dependencies>	
   <build>
   <plugins>
