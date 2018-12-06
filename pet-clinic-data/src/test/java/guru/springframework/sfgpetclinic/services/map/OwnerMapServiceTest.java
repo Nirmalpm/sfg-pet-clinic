@@ -2,6 +2,7 @@ package guru.springframework.sfgpetclinic.services.map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.Set;
@@ -43,7 +44,7 @@ public class OwnerMapServiceTest {
 		Owner owner = new Owner();
 		owner.setId(id);
 		Owner saveOwner = ownerMapService.save(owner);
-		assertEquals(id, saveOwner);
+		assertEquals(id, saveOwner.getId());
 	}
 	
 	@Test
@@ -71,6 +72,12 @@ public class OwnerMapServiceTest {
 		Owner owner = ownerMapService.findByLastName(lastName);
 		assertNotNull(owner);
 		assertEquals(lastName, owner.getLastName());
+	}
+	
+	@Test
+	void testFindByNoLastName() {
+		Owner owner = ownerMapService.findByLastName("foo");
+		assertNull(owner);
 	}
 
 }
