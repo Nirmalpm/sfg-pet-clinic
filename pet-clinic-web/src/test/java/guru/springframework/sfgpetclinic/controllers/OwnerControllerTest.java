@@ -1,6 +1,7 @@
 package guru.springframework.sfgpetclinic.controllers;
 
 import static org.junit.jupiter.api.Assertions.fail;
+import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
@@ -57,14 +58,16 @@ class OwnerControllerTest {
 		when(ownerService.findAll()).thenReturn(owners);
 		mockMvc.perform(get("/owners"))
 			   .andExpect(status().is(200))
-			   .andExpect(view().name("notimplemented"));
+			   .andExpect(view().name("owners/index"));
 	}
 
 	@Test
 	void testFindOwners() throws Exception {
 		mockMvc.perform(get("/owners/find"))
 		   .andExpect(status().is(200))
-		   .andExpect(view().name("owners/index"));
+		   .andExpect(view().name("notimplemented"));
+		verifyNoMoreInteractions(ownerService);
+		
 	}
 
 }
