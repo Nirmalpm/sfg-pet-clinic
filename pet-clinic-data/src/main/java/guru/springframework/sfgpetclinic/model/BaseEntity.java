@@ -11,7 +11,7 @@ import javax.persistence.MappedSuperclass;
 public class BaseEntity implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;
+	public Long id;
 
 	public Long getId() {
 		return id;
