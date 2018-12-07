@@ -9,8 +9,10 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name="owners")
+
 public class Owner extends Person{
 	@Column(name="address")
 	private String address;

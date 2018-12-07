@@ -1,6 +1,7 @@
 package guru.springframework.sfgpetclinic.model;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
